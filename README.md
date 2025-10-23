@@ -6,5 +6,6 @@ Pierre is a chatbot you can play games with! The special part about Pierre is no
 
 # Updates to be Added to Pierre
 - More Games!
+- An exit animation similar to the animation in the beginning.
 - Error handling involving invalid user input.
 - More Faces!!
