@@ -181,9 +181,5 @@ public class RandomNumberGenerator {
 		}
 		
 	}
-	
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 41c5afca1c9566396b0bafb3e2ac10e1a9f5996d
