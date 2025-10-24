@@ -71,6 +71,32 @@ public class Pierre {
 			RockPaperScissors.game(scanner);
 		}
 		
+		// Exit the program
+		if (userInput.contains("three")||userInput.contains("3")||userInput.contains("exit")) {
+			newPage();
+			
+			System.out.println("| ~ _ ~ | \noh, ok.");
+			
+			try {
+				Thread.sleep(4000);
+			} catch (Exception e) {
+				
+			}
+			
+			newPage();
+			
+			System.out.println("| ^ - ^ | \nThanks for spending time with me though! I'll see you later!");
+			
+			try {
+				Thread.sleep(4000);
+			} catch (Exception e) {
+				
+			}
+			
+			// Exits the program
+			System.exit(0);
+		}
+		
 	}
 	
 	public static void randomNumberGuesser(Scanner scanner) {
