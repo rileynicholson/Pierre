@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.Scanner;
 
 public class Main {
@@ -47,3 +48,17 @@ public class Main {
 | T _ T |
 
 */
+=======
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		Pierre.newPage();
+		Pierre.introduction(scanner);
+		Pierre.menu(scanner);
+	}
+}
+>>>>>>> d05ff7e9ee68b783049536819982db8513a12edd
