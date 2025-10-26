@@ -18,13 +18,17 @@ public class RockPaperScissors {
 			System.out.println("| ^-^ | \nEnter Rock, Paper, or Scissors!");
 			userInput = scanner.nextLine();
 			userInput = userInput.toLowerCase();
+			boolean inputWorks = false;
 			
 			Pierre.newPage();
-			RockPaperScissors.animation();
-			Pierre.newPage();
 			
-			// If user picks rock
+			// User choices
 			if (userInput.contains("rock")) {
+				RockPaperScissors.animation();
+				Pierre.newPage();
+				inputWorks = true;
+				
+				// User choice is rock
 				
 				if (cpuChoice == 1) {
 					System.out.println("| * o * | \nIt's a tie! We both chose Rock!");
@@ -34,10 +38,12 @@ public class RockPaperScissors {
 					System.out.println("| -_- | \nYou win! I chose Scissors!");
 				}
 				
-			}
-			
-			// If user picks paper
-			if (userInput.contains("paper")) {
+			} else if (userInput.contains("paper")) {
+				RockPaperScissors.animation();
+				Pierre.newPage();
+				inputWorks = true;
+				
+				// User choice is paper
 				
 				if (cpuChoice == 1) {
 					System.out.println("| -_- | \nYou win! I chose Rock!");
@@ -47,10 +53,12 @@ public class RockPaperScissors {
 					System.out.println("| ^-^ | \nI win! I chose Scissors!");
 				}
 				
-			}
-			
-			// If user picks scissors
-			if (userInput.contains("scissors")) {
+			} else if (userInput.contains("scissors")) {
+				RockPaperScissors.animation();
+				Pierre.newPage();
+				inputWorks = true;
+				
+				// User choice is scissors
 				
 				if (cpuChoice == 1) {
 					System.out.println("| ^-^ | \nI win! I chose Rock!");
@@ -59,24 +67,13 @@ public class RockPaperScissors {
 				} else if (cpuChoice == 3) {
 					System.out.println("| * o * | \nIt's a tie! We both chose Scissors!");
 				}
-			}
-			
-			try {
-				Thread.sleep(4000);
-			} catch (Exception e) {
+			} else {
+				Pierre.newPage();
 				
-			}
-			
-			// Prompts the user if they want to go again
-			Pierre.newPage();
-			System.out.println("| - o - | \nWould you like to do it again?");
-			userInput = scanner.nextLine();
-			userInput = userInput.toLowerCase();
-			Pierre.newPage();
-			
-			if (userInput.contains("yes")||userInput.contains("yeah")||userInput.contains("sure")||userInput.contains("yup")||userInput.contains("yuh")) { // More inputs could be added here
-				// User says yes
-				System.out.println("| ^ - ^ | \nYay! Let's do it!");
+				// Input validation
+				// Only happens if the user enters something the program cannot understand
+				
+				System.out.println("| o _ o | \nSorry! I don't know what you picked! Could you try entering it again?");
 				
 				try {
 					Thread.sleep(4000);
@@ -85,12 +82,10 @@ public class RockPaperScissors {
 				}
 				
 				Pierre.newPage();
-				
-				continue;
+				game(scanner);
+			}
 			
-			} else if (userInput.contains("no")||userInput.contains("nah")||userInput.contains("nope")) { // More inputs could be added here
-				// User says no
-				System.out.println("| U - U | \nOk, Going back to the menu!");
+			if (inputWorks) {
 				
 				try {
 					Thread.sleep(4000);
@@ -98,9 +93,66 @@ public class RockPaperScissors {
 					
 				}
 				
-				Pierre.newPage();
-				break;
+				boolean retry = true;
+				
+				while (retry) {
+					
+					// Prompts the user if they want to go again
+					Pierre.newPage();
+					
+					System.out.println("| - o - | \nWould you like to do it again?");
+					userInput = scanner.nextLine();
+					userInput = userInput.toLowerCase();
+					Pierre.newPage();
+					
+					if (userInput.contains("yes")||userInput.contains("yeah")||userInput.contains("sure")||userInput.contains("yup")||userInput.contains("yuh")) { // More inputs could be added here
+						// User says yes
+						System.out.println("| ^ - ^ | \nYay! Let's do it!");
+						retry = false;
+						
+						try {
+							Thread.sleep(4000);
+						} catch (Exception e) {
+							
+						}
+						
+						Pierre.newPage();
+						
+						continue;
+					
+					} else if (userInput.contains("no")||userInput.contains("nah")||userInput.contains("nope")) { // More inputs could be added here
+						// User says no
+						System.out.println("| U - U | \nOk, going back to the menu!");
+						retry = false;
+						
+						try {
+							Thread.sleep(4000);
+						} catch (Exception e) {
+							
+						}
+						
+						Pierre.newPage();
+						running = false;
+					} else {
+						// User enters an input that the program does not understand
+						
+						Pierre.newPage();
+						
+						System.out.println("| o _ o | \nSorry! I don't know what to do! Could you try entering it again?");
+						
+						try {
+							Thread.sleep(4000);
+						} catch (Exception e) {
+							
+						}
+						
+						Pierre.newPage();
+						continue;
+					}
+				}
+				
 			}
+			
 		}
 		
 		// Once the loop ends, the program sends user back to the main menu

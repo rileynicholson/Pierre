@@ -29,22 +29,22 @@ public class RandomNumberGenerator {
 				userInput = matcher.group();
 				userInputDigit = Integer.parseInt(userInput);
 				
-				// If user's number is too high
+				// Status of the user's number
 				if (userInputDigit > randomDigit) {
+					
+					// If user's number is too high
 					
 					Pierre.newPage();
 					System.out.println("\n| - _ - | \n" + userInputDigit + "? Go lower!");
-				}
-				
-				// If user's number is too low
-				if (userInputDigit < randomDigit) {
+				} else if (userInputDigit < randomDigit) {
+					
+					// If user's number is too low
 					
 					Pierre.newPage();
 					System.out.println("\n| - _ - | \n" + userInputDigit + "? Go higher!");
-				}
-				
-				// If user's number is the same number
-				if (userInputDigit == randomDigit) {
+				} else if (userInputDigit == randomDigit) {
+					
+					// If user's number is the same number
 					
 					Pierre.newPage();
 					System.out.println("\n| ^-^ | \nYay! You got it! Congratulations! It was " + randomDigit + "!");
@@ -58,6 +58,22 @@ public class RandomNumberGenerator {
 					running = false;
 					Pierre.newPage();
 					Pierre.menu(scanner);
+				} else {
+					Pierre.newPage();
+					
+					// Input validation
+					// Only happens if the user enters something the program cannot understand
+					
+					System.out.println("| o _ o | \nSorry! I don't understand! Could you try entering it again?");
+					
+					try {
+						Thread.sleep(4000);
+					} catch (Exception e) {
+						
+					}
+					
+					Pierre.newPage();
+					easyGame(scanner);
 				}
 				
 			}
@@ -88,21 +104,22 @@ public class RandomNumberGenerator {
 				userInput = matcher.group();
 				userInputDigit = Integer.parseInt(userInput);
 				
-				// If user's number is too high
+				// Status of the user's number
 				if (userInputDigit > randomDigit) {
+					
+					// If user's number is too high
 					
 					Pierre.newPage();
 					System.out.println("\n| - _ - | \n" + userInputDigit + "? Go lower!");
-				}
-				
-				// If user's number is too low
-				if (userInputDigit < randomDigit) {
+				} else if (userInputDigit < randomDigit) {
+					
+					// If user's number is too low
 					
 					Pierre.newPage();
 					System.out.println("\n| - _ - | \n" + userInputDigit + "? Go higher!");
-				}
-				
-				if (userInputDigit == randomDigit) {
+				} if (userInputDigit == randomDigit) {
+					
+					// If user's number is the same number
 					
 					Pierre.newPage();
 					System.out.println("\n| ^-^ | \nYay! You got it! Congratulations! It was " + randomDigit + "!");
@@ -116,6 +133,22 @@ public class RandomNumberGenerator {
 					running = false;
 					Pierre.newPage();
 					Pierre.menu(scanner);
+				} else {
+					Pierre.newPage();
+					
+					// Input validation
+					// Only happens if the user enters something the program cannot understand
+					
+					System.out.println("| o _ o | \nSorry! I don't understand! Could you try entering it again?");
+					
+					try {
+						Thread.sleep(4000);
+					} catch (Exception e) {
+						
+					}
+					
+					Pierre.newPage();
+					mediumGame(scanner);
 				}
 				
 			}
@@ -146,21 +179,22 @@ public class RandomNumberGenerator {
 				userInput = matcher.group();
 				userInputDigit = Integer.parseInt(userInput);
 				
-				// If user's number is too high
+				// Status of the user's number
 				if (userInputDigit > randomDigit) {
+					
+					// If user's number is too high
 					
 					Pierre.newPage();
 					System.out.println("\n| - _ - | \n" + userInputDigit + "? Go lower!");
-				}
-				
-				// If user's number is too low
-				if (userInputDigit < randomDigit) {
+				} else if (userInputDigit < randomDigit) {
+					
+					// If user's number is too low
 					
 					Pierre.newPage();
 					System.out.println("\n| - _ - | \n" + userInputDigit + "? Go higher!");
-				}
-				
-				if (userInputDigit == randomDigit) {
+				} else if (userInputDigit == randomDigit) {
+					
+					// If user's number is the same number
 					
 					Pierre.newPage();
 					System.out.println("\n| ^-^ | \nYay! You got it! Congratulations! It was " + randomDigit + "!");

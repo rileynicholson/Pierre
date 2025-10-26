@@ -35,9 +35,11 @@ public class Pierre {
 		userInput = scanner.nextLine();
 		userInput = userInput.toLowerCase();
 		
-		// Random Number Guesser
+		// Options
 		if (userInput.contains("one")||userInput.contains("1")||userInput.contains("random")||userInput.contains("number")||userInput.contains("guesser")||userInput.contains("rng")) {
 			newPage();
+			
+			// Random Number Guesser
 			
 			System.out.println("| ^ - ^ | \nLet's do it!");
 			
@@ -51,11 +53,10 @@ public class Pierre {
 			
 			// Sends them to the random number guesser game
 			randomNumberGuesser(scanner);
-		}
-		
-		// Rock Paper Scissors
-		if (userInput.contains("two")||userInput.contains("2")||userInput.contains("rock")||userInput.contains("paper")||userInput.contains("scissors")||userInput.contains("rps")) {
+		} else if (userInput.contains("two")||userInput.contains("2")||userInput.contains("rock")||userInput.contains("paper")||userInput.contains("scissors")||userInput.contains("rps")) {
 			newPage();
+			
+			// Rock Paper Scissors
 			
 			System.out.println("| ^ - ^ | \nLet's do it!");
 			
@@ -69,13 +70,12 @@ public class Pierre {
 			
 			// Sends them to the rock paper scissors game
 			RockPaperScissors.game(scanner);
-		}
-		
-		// Exit the program
-		if (userInput.contains("three")||userInput.contains("3")||userInput.contains("exit")) {
+		} else if (userInput.contains("three")||userInput.contains("3")||userInput.contains("exit")) {
 			newPage();
 			
-			System.out.println("| ~ _ ~ | \noh, ok.");
+			// Exit
+			
+			System.out.println("| ~ _ ~ | \nOh, ok.");
 			
 			try {
 				Thread.sleep(4000);
@@ -95,6 +95,22 @@ public class Pierre {
 			
 			// Exits the program
 			System.exit(0);
+		} else {
+			newPage();
+			
+			// Input validation
+			// Only happens if the user enters something the program cannot understand
+			
+			System.out.println("| o _ o | \nSorry! I don't know what to do! Could you try entering it again?");
+			
+			try {
+				Thread.sleep(4000);
+			} catch (Exception e) {
+				
+			}
+			
+			newPage();
+			menu(scanner);
 		}
 		
 	}
@@ -109,9 +125,11 @@ public class Pierre {
 		userInput = scanner.nextLine();
 		userInput = userInput.toLowerCase();
 		
-		// Easy mode
+		// Modes
 		if (userInput.contains("easy")) {
 			newPage();
+			
+			// Easy mode
 			
 			System.out.println("| ^ - ^ | \nGotcha! Easy it is!");
 			
@@ -123,11 +141,10 @@ public class Pierre {
 			
 			newPage();
 			RandomNumberGenerator.easyGame(scanner);
-		}
-		
-		// Medium mode
-		if (userInput.contains("medium")) {
+		} else if (userInput.contains("medium")) {
 			newPage();
+			
+			// Medium mode
 			
 			System.out.println("| ^ - ^ | \nGotcha! Medium it is!");
 			
@@ -139,11 +156,10 @@ public class Pierre {
 			
 			newPage();
 			RandomNumberGenerator.mediumGame(scanner);
-		}
-		
-		// Hard mode
-		if (userInput.contains("hard")) {
+		} else if (userInput.contains("hard")) {
 			newPage();
+			
+			// Hard mode
 			
 			System.out.println("| ^ - ^ | \nGotcha! Hard it is!");
 			
@@ -155,7 +171,23 @@ public class Pierre {
 			
 			newPage();
 			RandomNumberGenerator.hardGame(scanner);
-		}	
+		} else {
+			newPage();
+			
+			// Input validation
+			// Only happens if the user enters something the program cannot understand
+			
+			System.out.println("| o _ o | \nSorry! I don't know what to do! Could you try entering it again?");
+			
+			try {
+				Thread.sleep(4000);
+			} catch (Exception e) {
+				
+			}
+			
+			newPage();
+			randomNumberGuesser(scanner);
+		}
 		
 	}
 	
