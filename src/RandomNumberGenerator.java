@@ -208,6 +208,22 @@ public class RandomNumberGenerator {
 					running = false;
 					Pierre.newPage();
 					Pierre.menu(scanner);
+				} else {
+					Pierre.newPage();
+					
+					// Input validation
+					// Only happens if the user enters something the program cannot understand
+					
+					System.out.println("| o _ o | \nSorry! I don't understand! Could you try entering it again?");
+					
+					try {
+						Thread.sleep(4000);
+					} catch (Exception e) {
+						
+					}
+					
+					Pierre.newPage();
+					hardGame(scanner);
 				}
 				
 			}
